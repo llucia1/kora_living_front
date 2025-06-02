@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  vue:
+    container_name: vue-app
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5174:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - HOST=0.0.0.0
